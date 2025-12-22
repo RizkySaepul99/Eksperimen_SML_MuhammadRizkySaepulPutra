@@ -32,4 +32,4 @@ jobs:
         uses: actions/upload-artifact@v4
         with:
           name: EAFC26_preprocessing
-          path: Eksperimen_SML_MuhammadRizkySaepulPutra/preprocessing/EAFC26_preprocessing.csv
+          path: preprocessing/EAFC26_preprocessing.csv
