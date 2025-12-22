@@ -1,0 +1,35 @@
+name: Preprocessing EAFC26 Dataset
+
+on:
+  push:
+    branches:
+      - main
+    paths:
+      - Eksperimen_SML_MuhammadRizkySaepulPutra/preprocessing/**
+      - .github/workflows/**
+
+jobs:
+  preprocess:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v4
+
+      - name: Setup Python
+        uses: actions/setup-python@v5
+        with:
+          python-version: '3.10'
+
+      - name: Install dependencies
+        run: pip install pandas
+
+      - name: Run preprocessing
+        run: |
+          python Eksperimen_SML_MuhammadRizkySaepulPutra/preprocessing/automate_MuhammadRizkySaepulPutra.py
+
+      - name: Upload processed dataset
+        uses: actions/upload-artifact@v4
+        with:
+          name: EAFC26_preprocessing
+          path: Eksperimen_SML_MuhammadRizkySaepulPutra/preprocessing/EAFC26_preprocessing.csv
