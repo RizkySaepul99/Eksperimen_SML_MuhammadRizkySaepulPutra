@@ -26,7 +26,7 @@ jobs:
 
       - name: Run preprocessing
         run: |
-          python Eksperimen_SML_MuhammadRizkySaepulPutra/preprocessing/automate_MuhammadRizkySaepulPutra.py
+          python preprocessing/automate_MuhammadRizkySaepulPutra.py
 
       - name: Upload processed dataset
         uses: actions/upload-artifact@v4
