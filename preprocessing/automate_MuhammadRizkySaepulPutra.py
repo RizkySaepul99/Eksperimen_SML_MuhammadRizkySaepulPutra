@@ -20,10 +20,11 @@ def save_data(df, output_path):
     df.to_csv(output_path, index=False)
 
 def run_all_steps():
-    df = load_data("Eksperimen_SML_MuhammadRizkySaepulPutra/EAFC26_raw.csv")
+    df = load_data("EAFC26_raw.csv")
     df_clean = preprocess_data(df)
     save_data(df_clean, "Eksperimen_SML_MuhammadRizkySaepulPutra/preprocessing/EAFC26_preprocessing.csv")
     return df_clean
 
 if __name__ == "__main__":
+
     run_all_steps()
